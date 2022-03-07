@@ -32,9 +32,11 @@ It's useful when:
     hits        Letters in correct positions. Denote unknown with '.'. ex. '..ol.'
 
     optional arguments:
-    -h, --help  show this help message and exit
-    -b BLOWS    Letters included but in wrong positions. ex. 'n'
-    -m MISSES   Letters not included. ex. 'whetsqueryidac'
+    -h, --help   show this help message and exit
+    --hits HITS  Letters in correct positions. Denote unknown with '.'. ex. '..ol.'
+    -b BLOWS     Letters included but in wrong positions. ex. 'n'
+    -m MISSES    Letters not included. ex. 'whetsqueryidac'
+    -i           Run this tool in interactive mode
     ```
 
 ## Example
@@ -42,14 +44,14 @@ It's useful when:
 https://www.reddit.com/r/wordlegame/comments/sbaahp/i_gave_up_on_this_one_what_would_you_guess/
 
 ```
-> python list_candidates.py ..... -b u -m adie
+> python list_candidates.py --hits ..... -b u -m adie
 bluff
 blunt
 blurb
 ...
 # this gives you a lot of candidates...
 
-> python list_candidates.py ....y -b u -m adiecomf
+> python list_candidates.py --hits ....y -b u -m adiecomf
 buggy
 bulky
 bully
@@ -61,7 +63,7 @@ bully
 # if it hits, you know that 'u' does go there.
 # if it does not hit, you are left with only two candidates.
 
-> python list_candidates.py ...py -b u -m adiecomftras
+> python list_candidates.py --hits ...py -b u -m adiecomftras
 puppy
 # now you are left with only one.
 # you know that this guy could have won the game in just 4 tries.
